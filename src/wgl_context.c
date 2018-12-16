@@ -235,22 +235,22 @@ static void makeContextCurrentWGL(_GLFWwindow* window)
     {
         if (wglMakeCurrent(window->context.wgl.dc, window->context.wgl.handle))
             _glfwPlatformSetCurrentContext(window);
-        else
-        {
-            _glfwInputError(GLFW_PLATFORM_ERROR,
-                            "WGL: Failed to make context current");
-            _glfwPlatformSetCurrentContext(NULL);
-        }
+        // else
+        // {
+            // _glfwInputError(GLFW_PLATFORM_ERROR,
+            //                 "WGL: Failed to make context current");
+            // _glfwPlatformSetCurrentContext(NULL);
+        // }
     }
     else
     {
         if (!wglMakeCurrent(NULL, NULL))
         {
-            _glfwInputError(GLFW_PLATFORM_ERROR,
-                            "WGL: Failed to clear current context");
+            // _glfwInputError(GLFW_PLATFORM_ERROR,
+            //                "WGL: Failed to clear current context");
         }
 
-        _glfwPlatformSetCurrentContext(NULL);
+        // _glfwPlatformSetCurrentContext(NULL);
     }
 }
 
